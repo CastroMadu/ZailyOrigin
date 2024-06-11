@@ -21,18 +21,18 @@
           <div class="header__main">
             <ul class="header__links">
               <li class="header__link-wrapper">
-                <a href="index.html" class="header__link"> Inicio </a>
+                <a href="inde".phpindex.php class="header__link"> Inicio </a>
               </li>
               <li class="header__link-wrapper">
-                <a href="rotas.html" class="header__link"> Rotas </a>
+                <a href="rotas.php" class="header__link"> Rotas </a>
               </li>
               <li class="header__link-wrapper">
-                <a href="oficinas.html" class="header__link">
+                <a href="oficinas.php" class="header__link">
                   Oficinas
                 </a>
               </li>
               <li class="header__link-wrapper">
-                <a href="login.html" class="header__link"> Entrar </a>
+                <a href="login.php" class="header__link"> Entrar </a>
               </li>
             </ul>
             <div class="header__main-ham-menu-cont">
@@ -48,19 +48,19 @@
           <div class="header__sm-menu-content">
             <ul class="header__sm-menu-links">
               <li class="header__sm-menu-link">
-                <a href="index.html"> Inicio </a>
+                <a href="inde".phpindex.php> Inicio </a>
               </li>
   
               <li class="header__sm-menu-link">
-                <a href="rotas.html"> Rotas </a>
+                <a href="rotas.php"> Rotas </a>
               </li>
   
               <li class="header__sm-menu-link">
-                <a href="oficinas.html"> Oficinas </a>
+                <a href="oficinas.php"> Oficinas </a>
               </li>
   
               <li class="header__sm-menu-link">
-                <a href="login.html"> Entrar </a>
+                <a href="login.php"> Entrar </a>
               </li>
             </ul>
           </div>
@@ -72,8 +72,8 @@
             <img src="assets/img/png/ImgTelaCadastro.png">
         </div>
         <div class="form-box">
-            <h2><a href="cadastro.html" class="LinkTitleCadastro">Criar Conta</a></h2>
-            <p class="PCadastro"> Já é um membro? Faça<a href="login.html" class="a-LinkCadastro"> Login </a> </p>
+            <h2><a href="cadastro.php" class="LinkTitleCadastro">Criar Conta</a></h2>
+            <p class="PCadastro"> Já é um membro? Faça<a href="login.php" class="a-LinkCadastro"> Login </a> </p>
             <form action="#">
                 <div class="input-group">
                     <label for="nome" class="LabelCadastro"> Nome Completo</label>
@@ -112,7 +112,7 @@
                 <div class="input-group">
                     <button>Cadastrar</button>
                 </div>
-                <p class="PLinkInicio">Voltar para o <a href="index.html" class="a-LinkCadastro"> Inicio </a> </p>
+                <p class="PLinkInicio">Voltar para o <a href="index.php" class="a-LinkCadastro"> Inicio </a> </p>
             </form>
         </div>
      </div>

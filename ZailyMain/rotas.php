@@ -22,18 +22,18 @@
           <div class="header__main">
             <ul class="header__links">
               <li class="header__link-wrapper">
-                <a href="index.html" class="header__link"> Inicio </a>
+                <a href="index.php" class="header__link"> Inicio </a>
               </li>
               <li class="header__link-wrapper">
-                <a href="rotas.html" class="header__link"> Rotas </a>
+                <a href="rotas.php" class="header__link"> Rotas </a>
               </li>
               <li class="header__link-wrapper">
-                <a href="oficinas.html" class="header__link">
+                <a href="oficinas.php" class="header__link">
                   Oficinas
                 </a>
               </li>
               <li class="header__link-wrapper">
-                <a href="login.html" class="header__link"> Entrar </a>
+                <a href="login.php" class="header__link"> Entrar </a>
               </li>
             </ul>
             <div class="header__main-ham-menu-cont">
@@ -54,19 +54,19 @@
           <div class="header__sm-menu-content">
             <ul class="header__sm-menu-links">
               <li class="header__sm-menu-link">
-                <a href="index.html"> Inicio </a>
+                <a href="index.php"> Inicio </a>
               </li>
   
               <li class="header__sm-menu-link">
-                <a href="rotas.html"> Rotas </a>
+                <a href="rotas.php"> Rotas </a>
               </li>
   
               <li class="header__sm-menu-link">
-                <a href="oficinas.html"> Oficinas </a>
+                <a href="oficinas.php"> Oficinas </a>
               </li>
   
               <li class="header__sm-menu-link">
-                <a href="login.html"> Entrar </a>
+                <a href="login.php"> Entrar </a>
               </li>
             </ul>
           </div>
@@ -79,7 +79,7 @@
           <div class="home-hero__info">
             <p class="text-primary">
               Quer passear por um lugar diferente e não 
-                conhece muita coisa por aí? A <a href="index.html" class="linkRota-inicio">Zaily</a> pode te ajudar!
+                conhece muita coisa por aí? A <a href="index.php" class="linkRota-inicio">Zaily</a> pode te ajudar!
                 Separamos algumas das melhores estradas e caminhos que 
                 vale a pena percorrer com a sua bicicleta.
                 Seja você um nativo ou viajante,
@@ -87,7 +87,7 @@
             </p>
           </div>
            <div class="home-hero__cta">
-            <a href="./rotas.html#formulario" class="btn btn--bg">Vamos descobrir?</a>
+            <a href="./rotas.php#formulario" class="btn btn--bg">Vamos descobrir?</a>
           </div>
         </div>
         <!--
