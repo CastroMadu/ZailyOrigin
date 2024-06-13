@@ -1,3 +1,84 @@
+<?php
+include "../include/MySql.php";
+
+$nmUsuario = "";
+$email= "";
+$genero= "";
+$senha= "";
+$dtNasc= "";
+$confSenha= "";
+
+$nmUsuarioErro = "";
+$emailErro= "";
+$generoErro= "";
+$senhaErro= "";
+$dtNascErro="";
+$confSenhaErro= "";
+$msgErro="";
+
+
+            if (empty($_POST['nmUsuario']))
+                $nmUsuarioErro = "Nome é obrigatório!";  
+            else 
+                $nmUsuario = $_POST['nome'];
+            
+            if (empty($_POST['email']))    
+                $emailErro = "Email é obrigatório!";
+            else    
+                $email = $_POST['email'];
+            
+            if (empty($_POST['genero']))
+                $generoErro = "genero é obrigatório!";
+            else    
+                $genero = $_POST['genero'];
+            
+            if (empty($_POST['senha']))
+                $senhaErro = "Senha é obrigatório!";
+            else     
+                $senha = $_POST['senha'];
+
+            if (empty($_POST['dtNasc']))    
+                $dtNascErro = "Data de nascimento é obrigatório!";
+            else     
+                $dtNasc = $_POST['dtNasc'];
+
+            if (empty($_POST['confSenha']))    
+                $confSenhaErro = "Confirmação de senha é obrigatório!";
+            else     
+                $confSenha = $_POST['confSenha'];
+
+            if ($email && $nmUsuario && $senha && $genero && $dtNasc && $confSenha) {
+                //Verificar se ja existe o email
+                $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email = ?");
+                if ($sql->execute(array($email))){
+                    if ($sql->rowCount() <= 0){
+                        $sql = $pdo->prepare("INSERT INTO USUARIO (nome, email, genero, senha, dtNasc, confSenha)
+                                            VALUES ( ?, ?, ?, ?, ?, ?)");
+                        if ($sql->execute(array($nmUsuario, $email, $genero, md5($senha), $dtNasc, $confSenha))){
+                            $msgErro = "Dados cadastrados com sucesso!";
+                            $nmUsuario = "";
+                            $email= "";
+                            $genero= "";
+                            $senha= "";
+                            $dtNasc= "";
+                            $confSenha= "";
+                            header('location:login.php');
+                        } else {
+                            $msgErro = "Dados não cadastrados!";
+                        }  
+                    } else {
+                        $msgErro = "Email de usuário já cadastrado!!";
+                    }    
+                } else {
+                    $msgErro = "Erro no comando SELECT!";
+                }    
+            } else {
+                $msgErro = "Dados não cadastrados!";
+            }
+     
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +94,7 @@
 </head>
 
 <body>
+<form method="POST" enctype="multipart/form-data">
     <!-- <header class="header">
         <div class="header__content">
           <div class="header__logo-container">
@@ -76,9 +158,9 @@
             <p class="PCadastro"> Já é um membro? Faça<a href="login.php" class="a-LinkCadastro"> Login </a> </p>
             <form action="#">
                 <div class="input-group">
-                    <label for="nome" class="LabelCadastro" value="<?php echo $nome?>"> Nome Completo</label>
+                    <label for="nome" class="LabelCadastro" value="<?php echo $nmUsuario?>"> Nome Completo</label>
                     <input type="text" id="nome" placeholder="Digite o seu nome completo" required>
-                    <span class="obrigatorio">*<?php echo $nomeErro?></span>
+                    <span class="obrigatorio">*<?php echo $nmUsuarioErro?></span>
                 </div>
 
                 <div class="input-group">
@@ -88,9 +170,9 @@
                 </div>
 
                 <div class="input-group w50">
-                  <label for="date" class="LabelCadastro" value="<?php echo $dtnasc?>">Data de nascimento</label>
+                  <label for="date" class="LabelCadastro" value="<?php echo $dtNasc?>">Data de nascimento</label>
                   <input type="date" id="dtNasc" placeholder="xx/xx/xxxx" required>
-                  <span class="obrigatorio">*<?php echo $dtnascErro?></span>
+                  <span class="obrigatorio">*<?php echo $dtNascErro?></span>
               </div>
 
               <div class="input-group w50">
@@ -110,98 +192,21 @@
                 </div>
 
                 <div class="input-group w50">
-                    <label for="Confirmarsenha" class="LabelCadastro">Confirmar Senha</label>
+                    <label for="Confirmarsenha" class="LabelCadastro" value="<?php echo $confSenha?>">Confirmar Senha</label>
                     <input type="password" id="Confirmarsenha" placeholder="Confirme a senha" required>
+                    <span class="obrigatorio">*<?php echo $confSenhaErro?></span>
                 </div>
 
                 <div class="input-group">
-                    <button>Cadastrar</button>
+                  <button><a href="rotas.php">Cadastrar</a></button>
                 </div>
                 <p class="PLinkInicio">Voltar para o <a href="index.php" class="a-LinkCadastro"> Inicio </a> </p>
             </form>
         </div>
      </div>
    </div>
+   <span><?php echo $msgErro?></span>
   </section>
       <script src="assets/js/index.js"></script>
 </body>
 
-<?php
-include "../include/MySql.php";
-
-$nome = "";
-$email= "";
-$genero= "";
-$senha= "";
-$dtnasc= "";
-$senhaConfirmar= "";
-
-$nomeErro = "";
-$emailErro= "";
-$generoErro= "";
-$senhaErro= "";
-$dtnascErro="";
-$senhaConfirmarErro= "";
-$msgErro="";
-
-
-            if (empty($_POST['nome']))
-                $nomeErro = "Nome é obrigatório!";  
-            else 
-                $nome = $_POST['nome'];
-            
-            if (empty($_POST['email']))    
-                $emailErro = "Email é obrigatório!";
-            else    
-                $email = $_POST['email'];
-            
-            if (empty($_POST['genero']))
-                $generoErro = "genero é obrigatório!";
-            else    
-                $genero = $_POST['genero'];
-            
-            if (empty($_POST['senha']))
-                $senhaErro = "Senha é obrigatório!";
-            else     
-                $senha = $_POST['senha'];
-
-            if (empty($_POST['dtnasc']))    
-                $dtnascErro = "Data de nascimento é obrigatório!";
-            else     
-                $dtnasc = $_POST['dtnasc'];
-
-            if (empty($_POST['senhaConfirmar']))    
-                $senhaConfirmarErro = "Confirmação de senha é obrigatório!";
-            else     
-                $senhaConfirmar = $_POST['senhaConfirmar'];
-
-            if ($email && $nome && $senha && $genero && $dtnasc && $senhaConfirmar) {
-                //Verificar se ja existe o email
-                $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email = ?");
-                if ($sql->execute(array($email))){
-                    if ($sql->rowCount() <= 0){
-                        $sql = $pdo->prepare("INSERT INTO USUARIO (codigo, nome, email, genero, senha, dtnasc, senhaConfirmar)
-                                            VALUES (null, ?, ?, ?, ?, ?, ?)");
-                        if ($sql->execute(array($nome, $email, $genero, md5($senha), $dtnasc, $senhaConfirmar))){
-                            $msgErro = "Dados cadastrados com sucesso!";
-                            $nome = "";
-                            $email= "";
-                            $genero= "";
-                            $senha= "";
-                            $dtnasc= "";
-                            $senhaConfirmar= "";
-                            header('location:login.php');
-                        } else {
-                            $msgErro = "Dados não cadastrados!";
-                        }  
-                    } else {
-                        $msgErro = "Email de usuário já cadastrado!!";
-                    }    
-                } else {
-                    $msgErro = "Erro no comando SELECT!";
-                }    
-            } else {
-                $msgErro = "Dados não cadastrados!";
-            }
-     
-?>
