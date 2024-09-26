@@ -1,10 +1,7 @@
 <?php
 include "../include/MySql.php";
 ?>
-<?php 
-include "layout/header/header.php";
-include "layout/footer/footer.php";
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +11,10 @@ include "layout/footer/footer.php";
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-      <div class="preloading" id="preloading">
+      <!-- <div class="preloading" id="preloading">
         <div class="loading" id="loading"></div>
     </div>
-    
+     -->
       <section class="home-hero">
         <div class="home-hero__content">
           <h1 class="heading-primary">Treino, Foco, Superação</h1>
@@ -62,7 +59,8 @@ include "layout/footer/footer.php";
       </div>
 
   </section>
-
+  <?php include "layout/footer/footer.php";?>
+  
     <script src="ZailyMain/assets/js/index.js"></script>
 </body>
 </html>

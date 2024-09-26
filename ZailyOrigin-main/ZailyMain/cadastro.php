@@ -1,6 +1,6 @@
 <?php
 include "../include/MySql.php";
-include "layout/header/header.php";
+
 
 $nmUsuario = $email = $genero = $senha = $dtNasc = $confSenha = "";
 $nmUsuarioErro = $emailErro = $generoErro = $senhaErro = $dtNascErro = $confSenhaErro = $msgErro = "";

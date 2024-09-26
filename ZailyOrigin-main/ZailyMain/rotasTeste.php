@@ -24,15 +24,20 @@ include "footer.php"
             <p class="text-primary">
               Quer passear por um lugar diferente e não 
               <br>
+              <br>
                 conhece muita coisa por aí? A <a href="index.php" class="linkRota-inicio">Zaily</a> pode te ajudar!
+                <!-- <br>
                 <br>
                 Separamos algumas das melhores estradas e caminhos que 
                 <br>
+                <br>
                 vale a pena percorrer com a sua bicicleta.
+                <br>
                 <br>
                 Seja você um nativo ou viajante,
                 <br>
-                a única regra e ser apaixonado pelo <a href="#" class="linkRota-cicle">ciclismo.</a>  
+                <br>
+                a única regra e ser apaixonado pelo <a href="#" class="linkRota-cicle">ciclismo.</a>   -->
             </p>
           </div>
            <div class="home-hero__cta">
