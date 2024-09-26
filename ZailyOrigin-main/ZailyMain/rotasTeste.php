@@ -41,7 +41,7 @@ include "footer.php"
             </p>
           </div>
            <div class="home-hero__cta">
-            <a href="./rotas.php#formulario" class="btn btn--bg">Vamos descobrir?</a>
+            <a href="./rotasTeste.php" class="btn btn--bg">Vamos descobrir?</a>
           </div>
         </div>
         <!--
