@@ -8,7 +8,15 @@ include "layout/header/header.php"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaily | Oficinas </title>
     <link rel="stylesheet" href="assets/css/style.css">
-</head>
+</head> 
 <body>
-    <script src="assets/js/index.js"></script>
-</body>2
+<section class="home-hero">
+        <h1> Em breve irá haver novidades... </h1>
+      </section>    
+      <script src="assets/js/index.js"></script>
+</body>
+<?php 
+include "layout/footer/footer.php";
+?>
+
+</html>
