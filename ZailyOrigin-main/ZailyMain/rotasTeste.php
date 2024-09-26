@@ -11,123 +11,7 @@ include "layout/header/header.php";
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.17.0/maps/maps-web.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-<style>
-    /* Reset básico para garantir consistência entre navegadores */
-
-
-/* Estilo do painel de rotas */
-#routePanel {
-    background: rgba(255, 255, 255, 0.9); /* Fundo transparente */
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-    margin: 0 auto; /* Centraliza o painel */
-    z-index: 10; /* Garantir que o painel fique sobre o mapa */
-}
-
-/* Ajuste para que o painel não sobreponha totalmente o mapa */
-#routePanel h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    color: #2e7d32; /* Verde escuro */
-}
-
-/* Estilo do mapa */
-#map {
-    width: 100%;
-    height: 500px; /* Altura ajustada para melhor visualização */
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 20px; /* Espaço superior para o painel de pesquisa não cobrir o mapa */
-}
-
-/* Estilo do formulário */
-form {
-    margin: 20px 0;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-    font-size: 1.1em;
-    color: #333;
-}
-
-input[type="text"],
-select {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 2px solid #2e7d32; /* Verde escuro */
-    border-radius: 8px;
-    font-size: 1.1em;
-    transition: all 0.3s ease-in-out;
-}
-
-input[type="text"]:focus,
-select:focus {
-    border-color: #66bb6a; /* Verde claro */
-    box-shadow: 0 0 8px rgba(102, 187, 106, 0.5);
-}
-
-button {
-    background-color: #66bb6a; /* Verde claro */
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2em;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s, transform 0.3s;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #4caf50; /* Verde médio */
-    transform: translateY(-2px); /* Efeito de leve elevação */
-}
-
-/* Estilo da informação da rota */
-#routeInfo {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    margin-top: 20px;
-    color: #333;
-}
-
-/* Estilo dos ícones e informações da rota */
-.route-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.route-info i {
-    font-size: 1.5em;
-    color: #4caf50; /* Verde médio */
-    margin-right: 10px;
-}
-
-footer {
-    background-color: #ffffff;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-    padding: 10px 20px;
-    text-align: center;
-    margin-top: 30px;
-}
-
-footer p {
-    font-size: 0.9em;
-    color: #666;
-}
-
-</style>
-
+    <link rel="stylesheet" href="assets/css/rotas.css">
 </head>
 <?php
 include "footer.php"
@@ -139,10 +23,15 @@ include "footer.php"
           <div class="home-hero__info">
             <p class="text-primary">
               Quer passear por um lugar diferente e não 
+              <br>
                 conhece muita coisa por aí? A <a href="index.php" class="linkRota-inicio">Zaily</a> pode te ajudar!
+                <br>
                 Separamos algumas das melhores estradas e caminhos que 
+                <br>
                 vale a pena percorrer com a sua bicicleta.
+                <br>
                 Seja você um nativo ou viajante,
+                <br>
                 a única regra e ser apaixonado pelo <a href="#" class="linkRota-cicle">ciclismo.</a>  
             </p>
           </div>
@@ -271,6 +160,8 @@ include "footer.php"
             }
         }
     </script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/rotas.js"></script>
 </body>
 </html>
 

@@ -19,7 +19,7 @@ session_start()
           <a href="index.php" class="header__link"> Inicio </a>
         </li>
         <li class="header__link-wrapper">
-          <a href="rotas.php" class="header__link"> Rotas </a>
+          <a href="rotasTeste.php" class="header__link"> Rotas </a>
         </li>
         <li class="header__link-wrapper">
           <a href="oficinas.php" class="header__link">
@@ -51,7 +51,7 @@ session_start()
         </li>
 
         <li class="header__sm-menu-link">
-          <a href="rotas.php"> Rotas </a>
+          <a href="rotasTeste.php"> Rotas </a>
         </li>
 
         <li class="header__sm-menu-link">
