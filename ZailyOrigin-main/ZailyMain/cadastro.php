@@ -1,54 +1,68 @@
 <?php
-include "../include/MySql.php";
-
+include "../include/MySql.php"; // Certifique-se de que este arquivo contém a conexão correta com o banco de dados.
 
 $nmUsuario = $email = $genero = $senha = $dtNasc = $confSenha = "";
 $nmUsuarioErro = $emailErro = $generoErro = $senhaErro = $dtNascErro = $confSenhaErro = $msgErro = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    if (empty($_POST['nmUsuario']))
+    // Validação dos campos
+    if (empty($_POST['nmUsuario'])) {
         $nmUsuarioErro = "Nome é obrigatório!";
-    else
+    } else {
         $nmUsuario = $_POST['nmUsuario'];
+    }
 
-    if (empty($_POST['email']))
+    if (empty($_POST['email'])) {
         $emailErro = "Email é obrigatório!";
-    else
+    } else {
         $email = $_POST['email'];
+    }
 
-    if (empty($_POST['genero']))
+    if (empty($_POST['genero'])) {
         $generoErro = "Gênero é obrigatório!";
-    else
+    } else {
         $genero = $_POST['genero'];
+    }
 
-    if (empty($_POST['senha']))
+    if (empty($_POST['senha'])) {
         $senhaErro = "Senha é obrigatória!";
-    else
+    } else {
         $senha = $_POST['senha'];
+    }
 
-    if (empty($_POST['dtNasc']))
+    if (empty($_POST['dtNasc'])) {
         $dtNascErro = "Data de nascimento é obrigatória!";
-    else
+    } else {
         $dtNasc = $_POST['dtNasc'];
+    }
 
-    if (empty($_POST['confSenha']))
+    if (empty($_POST['confSenha'])) {
         $confSenhaErro = "Confirmação de senha é obrigatória!";
-    else
+    } else {
         $confSenha = $_POST['confSenha'];
+    }
 
+    // Verificação de todos os campos preenchidos
     if ($nmUsuario && $email && $genero && $senha && $dtNasc && $confSenha) {
         if ($senha !== $confSenha) {
             $msgErro = "As senhas não correspondem!";
         } else {
-            try {
-                $sql = $pdo->prepare("INSERT INTO usuario (nmUsuario, email, genero, senha, dtNasc, confSenha)
-                                      VALUES (?, ?, ?, ?, ?, ?)");
-                $sql->execute(array($nmUsuario, $email, $genero, password_hash($senha, PASSWORD_DEFAULT), $dtNasc, password_hash($confSenha, PASSWORD_DEFAULT)));
-                echo "Dados cadastrados com sucesso!";
-                header('location: login.php');
-            } catch (PDOException $e) {
-                echo "Erro ao cadastrar: " . $e->getMessage();
+            // Inserção no banco de dados
+            $sql = $conn->prepare("INSERT INTO usuario (nmUsuario, email, genero, senha, dtNasc) VALUES (?, ?, ?, ?, ?)");
+            $hashedPassword = password_hash($senha, PASSWORD_DEFAULT);
+            
+            if ($sql) {
+                $sql->bind_param("sssss", $nmUsuario, $email, $genero, $hashedPassword, $dtNasc);
+                if ($sql->execute()) {
+                    echo "Dados cadastrados com sucesso!";
+                    header('location: login.php');
+                    exit();
+                } else {
+                    echo "Erro ao cadastrar: " . $sql->error;
+                }
+            } else {
+                echo "Erro ao preparar a consulta: " . $conn->error;
             }
         }
     } else {
@@ -56,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

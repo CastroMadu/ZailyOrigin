@@ -1,20 +1,15 @@
-<?php 
-    define('HOST', 'localhost');
-    define('DB', 'zaily');
-    define('USER', 'root');
-    define('PASS','');
-    define('PORT', '3306');
+<?php
+// Conexão com o banco de dados
+$servername = "localhost";
+$username = "root";
+$password = ""; // Defina a senha do seu banco de dados, se existir
+$dbname = "zaily";
 
-    try{
-        $pdo = new PDO('mysql:host='.HOST.';port='.PORT.';dbname='.DB, 
-                       USER,
-                       PASS,
-                       array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8")); 
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(Exception $e){
-        echo "Erro: $e";
-    }
+// Criando a conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-
-
+// Verificando a conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
 ?>

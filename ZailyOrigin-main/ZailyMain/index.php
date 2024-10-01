@@ -41,23 +41,23 @@ include "layout/header/header.php";
 
         <div class="gradeInicio">
           <div class="gradeFoto">
-              <img src="https://via.placeholder.com/300" alt="Foto 1">
+              <img src="../ZailyMain/assets/img/png/bike01.png" alt="Foto 1">
               <div class="legenda">Legenda 1</div>
           </div>
           <div class="gradeFoto">
-              <img src="https://via.placeholder.com/300" alt="Foto 2">
+              <img src="../ZailyMain/assets/img/png/bike02.png" alt="Foto 2">
               <div class="legenda">Legenda 2</div>
           </div>
           <div class="gradeFoto">
-              <img src="https://via.placeholder.com/300" alt="Foto 3">
+              <img src="../ZailyMain/assets/img/png/bike03.png" alt="Foto 3">
               <div class="legenda">Legenda 3</div>
           </div>
           <div class="gradeFoto">
-              <img src="https://via.placeholder.com/300" alt="Foto 4">
+              <img src="../ZailyMain/assets/img/png/bike04.png" alt="Foto 4">
               <div class="legenda">Legenda 4</div>
           </div>
           <div class="gradeFoto">
-              <img src="https://via.placeholder.com/300" alt="Foto 5">
+              <img src="../ZailyMain/assets/img/png/bike05.png" alt="Foto 5">
               <div class="legenda">Legenda 6</div>
           </div>
       </div>
