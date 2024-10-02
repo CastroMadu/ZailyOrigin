@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <header class="header">
   <div class="header__content">
     <div class="header__logo-container">
-      <span class="header__logo-sub">Zaily</span>
+      <span class="header__logo-sub">CicloTrack</span>
     </div>
     <div class="header__main">
       <ul class="header__links">

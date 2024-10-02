@@ -25,7 +25,7 @@ include "footer.php"
               Quer passear por um lugar diferente e não 
               <br>
               <br>
-                conhece muita coisa por aí? A <a href="index.php" class="linkRota-inicio">Zaily</a> pode te ajudar!
+                conhece muita coisa por aí? A <a href="index.php" class="linkRota-inicio">CicloTrack</a> pode <br><br> ajudar!
                 <!-- <br>
                 <br>
                 Separamos algumas das melhores estradas e caminhos que 
