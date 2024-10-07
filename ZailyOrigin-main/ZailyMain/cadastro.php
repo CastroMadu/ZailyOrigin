@@ -100,24 +100,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="input-group">
                         <label for="nome" class="LabelCadastro"> Nome Completo</label>
                         <input type="text" id="nome" name="nmUsuario" placeholder="Digite o seu nome completo" value="<?php echo $nmUsuario; ?>" required>
-                        <span class="obrigatorio">*<?php echo $nmUsuarioErro ?></span>
+                        <span class="obrigatorio"><?php echo $nmUsuarioErro ?></span>
                     </div>
 
                     <div class="input-group">
                         <label for="email" class="LabelCadastro">E-mail</label>
                         <input type="email" id="email" name="email" placeholder="Digite o seu email" value="<?php echo $email; ?>" required>
-                        <span class="obrigatorio">*<?php echo $emailErro ?></span>
+                        <span class="obrigatorio"><?php echo $emailErro ?></span>
                     </div>
 
                     <div class="input-group w50">
                         <label for="dtNasc" class="LabelCadastro">Data de nascimento</label>
                         <input type="date" id="dtNasc" name="dtNasc" value="<?php echo $dtNasc; ?>" required>
-                        <span class="obrigatorio">*<?php echo $dtNascErro ?></span>
+                        <span class="obrigatorio"><?php echo $dtNascErro ?></span>
                     </div>
 
                     <div class="input-group w50">
                         <label for="genero" class="LabelCadastro">Gênero</label>
-                        <span class="obrigatorio">*<?php echo $generoErro ?></span>
+                        <span class="obrigatorio"><?php echo $generoErro ?></span>
                         <select name="genero">
                             <option value="fem" <?php if ($genero == 'fem') echo 'selected'; ?>>Feminino</option>
                             <option value="mas" <?php if ($genero == 'mas') echo 'selected'; ?>>Masculino</option>
@@ -128,13 +128,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="input-group w50">
                         <label for="senha" class="LabelCadastro">Senha</label>
                         <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-                        <span class="obrigatorio">*<?php echo $senhaErro ?></span>
+                        <span class="obrigatorio"><?php echo $senhaErro ?></span>
                     </div>
 
                     <div class="input-group w50">
                         <label for="Confirmarsenha" class="LabelCadastro">Confirmar Senha</label>
                         <input type="password" id="Confirmarsenha" name="confSenha" placeholder="Confirme a senha" required>
-                        <span class="obrigatorio">*<?php echo $confSenhaErro ?></span>
+                        <span class="obrigatorio"><?php echo $confSenhaErro ?></span>
                     </div>
 
                     <div class="input-group">
