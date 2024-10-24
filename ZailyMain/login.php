@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "../include/MySql.php";
-
+ 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $senha = $_POST['senha'];

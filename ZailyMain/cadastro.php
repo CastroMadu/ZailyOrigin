@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); 
 include "../include/MySql.php";
 
 $nmUsuario = $email = $genero = $senha = $dtNasc = $confSenha = "";

@@ -44,7 +44,7 @@ if (isset($_SESSION['mensagem'])) {
     </div> -->
 
     <section class="home-hero">
-        <div class="home-hero__content">
+        <div class="home-hero__content"> 
             <h1 class="heading-primary">Treino, Foco, Superação</h1>
             <div class="home-hero__info">
                 <p class="text-primary">

@@ -1,4 +1,4 @@
-<?php 
+<?php  
 session_start();
 include "layout/header/header.php"
 ?>
