@@ -56,7 +56,7 @@ if (session_status() === PHP_SESSION_NONE) {
       <ul class="header__sm-menu-links">
         <li class="header__sm-menu-link">
           <a href="index.php"> Inicio </a>
-        </li>
+        </li> 
         <li class="header__sm-menu-link">
           <a href="rotasTeste.php"> Rotas </a>
         </li>
